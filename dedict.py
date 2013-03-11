@@ -1,4 +1,4 @@
-!#/usr/bin/env python2.7
+#!/usr/bin/env python2.7
 
 """ Takes a nested dict structure and turns it into a list of dicts, 
     merging the old highest-level keys into the lower dicts. 
