@@ -9,6 +9,6 @@ def rekey(to_rekey, newmap):
         Keys in to_rekey with no correlate in the map will be preserved. 
     """
     if hasattr(newmap, "__contains__"): 
-        return {newmap[k]:v for k,v in to_rekey if k in newmap else k:v}
+        return {(newmap[k] if k in newmap else k):v for k,v in to_rekey.items()}
     else: 
-        return {newmap(k):v for k,v in to_rekey}
+        return {newmap(k):v for k,v in to_rekey.items()}
