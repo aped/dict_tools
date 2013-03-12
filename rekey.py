@@ -8,7 +8,7 @@ def rekey(to_rekey, newmap):
         a function.
         Keys in to_rekey with no correlate in the map will be preserved. 
     """
-    if hasattr(newmap, "__contains__"): 
+    if issubclass(type(newmap), dict): 
         return {(newmap[k] if k in newmap else k):v for k,v in to_rekey.items()}
     else: 
         return {newmap(k):v for k,v in to_rekey.items()}
